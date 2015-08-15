@@ -24,6 +24,5 @@ class profile::base {
     default_locale => 'en_US.UTF-8',
     locales        => ['en_US.UTF-8 UTF-8', 'fr_CH.UTF-8 UTF-8'],
   }
-#  require ::profile::auth
   include ::profile::selinux
 }

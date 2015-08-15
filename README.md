@@ -28,17 +28,17 @@ Then, you have to run puppet using
 
     rake dev:apply_site
 
-The file site.pp is the entry point of puppet (as we are not in a master-agent infrastructure) and everything in this file will be executed by puppet on the guest machine.
+The file site.pp is the entry point of puppet (as we are not in a master-agent infrastructure) and everything in this file will be executed by puppet on the guest machine. After the installation of SELinux, the guest machine will reboot because of SELinux.
 
-During the installation, SELinux will be installed and set to 'permissive' mode (it requires a reboot of the machine). As the machine will not mount the sync folder after the reboot you will have to run the following command the reboot manually and mount the sync folder :
-
-    rake dev:reload
-
-When the machine is up, you need again to run
+When the machine is up, you need to run again
 
     rake dev:apply_site
 
 It will continue the installation. At the end, you have an operational Openshift Origin Installation.
+
+If you have some problems to run puppet after the reboot ('cannot fin site.pp' for example), it is because the shared folders were not mount automatically. If so, you just need to reload the guest machine via vagrant with the command :
+
+    rake dev:reload
 
 # How to use it
 

@@ -71,7 +71,6 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     [ `rpm -qa puppetlabs-release` = 'puppetlabs-release-6-7.noarch' ] || rpm -ivh http://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-6-7.noarch.rpm
     [ `rpm -qa puppet` = 'puppet-3.8.2-1.el6.noarch' ] || yum -y install puppet-3.8.2
-#    sudo yum update -y
-#    sudo /etc/init.d/vboxadd setup
+    sudo yum update --exclude=kernel* -y
   SHELL
 end

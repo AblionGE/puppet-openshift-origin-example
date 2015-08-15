@@ -12,7 +12,11 @@ To be able to play with Openshift, you need to have installed :
 
 # Installation
 
-First, you need to update modules to your machine running
+First, you need to clone this repo
+
+    git clone https://github.com/AblionGE/puppet-openshift-origin-example.git
+
+Then, you need to update modules to your machine running
 
     rake dependencies:deploy
 

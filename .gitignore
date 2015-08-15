@@ -5,6 +5,9 @@
 .tmp/
 librarian_modules/
 
+### Vagrant ###
+.vagrant/
+
 ### Ruby ###
 *.gem
 *.rbc

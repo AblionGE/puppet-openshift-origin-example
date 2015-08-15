@@ -47,11 +47,11 @@ To do so, just connect on the guest machine with ssh
 
     vagrant ssh
 
-Then, according to the Openshift Origin documentation, you need to create district, add the node (your machine) to this district and activate cartridges.
-To do that, run the following commands as root
+Then, according to the Openshift Origin documentation, you need to create district, add the node (your guest machine) to this district and activate cartridges.
+To do that, run the following commands as root on the guest machine :
 
     sudo oo-admin-ctl-district -c create -n small_district -p small
     sudo oo-admin-ctl-district -c add-node -n small_district -a
     sudo oo-admin-ctl-cartridge -c import-node --activate
 
-Now you should be able to access Openshift through your favorite web browser on the ip https://192.168.56.10
+Now you should be able to access Openshift through your favorite web browser on https://192.168.56.10 (or the ip you have set in the Vagrantfile)

@@ -62,7 +62,7 @@ class profile::openshift_origin::base (
     broker_ip_addr                  => $broker_ipaddress,
     nameserver_ip_addr              => $nameserver_ipaddress,
     node_ip_addr                    => $node_ipaddress,
-    conf_node_external_eth_dev      => 'eth0',
+    conf_node_external_eth_dev      => 'eth1',
 
     # RPM Sources
     install_method                  => 'none',

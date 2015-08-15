@@ -26,7 +26,7 @@ Then, you have to set up your machine. the Vagrantfile is already in the repo an
 
     rake dev:up
 
-This command will download the VM and update it.
+This command will download the VM and update it using the Vagrantfile.
 
 Then, you have to run puppet using
 

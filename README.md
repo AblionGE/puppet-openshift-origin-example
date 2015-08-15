@@ -22,7 +22,7 @@ Then, you need to update modules to your machine running
 
 If you see some errors, simply re-run this command.
 
-Then, you have to set up your machine. the Vagrantfile is already in the repo and Vagrantfile.one is simply a copy for when you destroy by inadvertence the Vagrantfile
+Then, you have to set up your machine. The Vagrantfile is already in the repo and Vagrantfile.one is simply a copy for when you destroy by inadvertence the Vagrantfile
 
     rake dev:up
 
@@ -40,19 +40,19 @@ When the machine is up, you need to run again
 
 It will continue the installation. At the end, you have an operational Openshift Origin Installation.
 
-If you have some problems to run puppet after the reboot ('cannot fin site.pp' for example), it is because the shared folders were not mount automatically. If so, you just need to reload the guest machine via vagrant with the command :
+If you have some problems to run puppet after the reboot ('cannot find site.pp' for example), it is because the shared folders were not mount automatically. If so, you just need to reload the guest machine via vagrant with the command
 
     rake dev:reload
 
 # How to use it
 
 To use and test openshift, you need to configure it manually.
-To do so, just connect on the guest machine with ssh
+To do so, just connect yourself on the guest machine with ssh
 
     vagrant ssh
 
 Then, according to the Openshift Origin documentation, you need to create district, add the node (your guest machine) to this district and activate cartridges.
-To do that, run the following commands as root on the guest machine :
+To do that, run the following commands on the guest machine :
 
     sudo oo-admin-ctl-district -c create -n small_district -p small
     sudo oo-admin-ctl-district -c add-node -n small_district -a
@@ -71,4 +71,4 @@ On your guest host, you can execute
 
     rake
     
-to see all command in the Rakefile
+to see all commands available in the Rakefile

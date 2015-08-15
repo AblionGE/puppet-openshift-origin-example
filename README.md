@@ -58,4 +58,17 @@ To do that, run the following commands as root on the guest machine :
     sudo oo-admin-ctl-district -c add-node -n small_district -a
     sudo oo-admin-ctl-cartridge -c import-node --activate
 
-Now you should be able to access Openshift through your favorite web browser on https://192.168.56.10 (or the ip you have set in the Vagrantfile)
+Now you should be able to access Openshift through your favorite web browser on https://192.168.56.10 or https://localhost:2443 (or the ip you have set in the Vagrantfile)
+
+When you create an application, 192.168.56.10 is directly linked to this application. You need to go on https://localhost:2443 to access the Openshift console and to manage your apps.
+
+The login account is hardcoded in the openshift class and is
+- username : demo
+- password : changeme
+
+# Tricks
+On your guest host, you can execute
+
+    rake
+    
+to see all command in the Rakefile

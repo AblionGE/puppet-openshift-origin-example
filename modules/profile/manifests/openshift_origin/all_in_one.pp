@@ -30,7 +30,7 @@ class profile::openshift_origin::all_in_one {
   $oo_ipaddress = $::ipaddress_eth1
 
   class { 'profile::hostname':
-    my_hostname => $::hostname,
+    my_hostname => 'openshift',
   }
 
   $config = {

@@ -25,8 +25,8 @@ class profile::openshift_origin::all_in_one {
   Class['Profile::Selinux'] -> Class['Openshift_origin']
   Class['Profile::Mount'] -> Class['Profile::Selinux']
  
-  $domain = "apps.${::domain}"
-  $oo_hostname = "broker.${::hostname}.local"
+  $domain = "apps.myopenshift.com"
+  $oo_hostname = "broker.openshift.local"
   $oo_ipaddress = $::ipaddress_eth1
 
   class { 'profile::hostname':
@@ -76,7 +76,7 @@ class profile::openshift_origin::all_in_one {
 
     # DNS Config
     bind_key                        => 'yV9qIn/KuCqvnu7SNtRKU3oZQMMxF1ET/GjkXt5pf5JBcHSKY8tqRagiocCbUX56GOM/iuP//D0TteLc3f1N2g==',
-    dns_infrastructure_zone         => "${::hostname}.local",
+    dns_infrastructure_zone         => "openshift.local",
     dns_infrastructure_names        => [
       {
         hostname => $oo_hostname,

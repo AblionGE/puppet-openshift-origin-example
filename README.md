@@ -68,7 +68,7 @@ The login account is hardcoded in the openshift class and is
 - username : demo
 - password : changeme
 
-To access to your apps using their URL, you need to add the nameserver of your installation to the file '/etc/resolv.conf' of your guest machine
+To access to your apps using their URL, you need to add the nameserver of your installation to the file '/etc/resolv.conf' of your host machine
 
     nameserver 192.168.56.10
 

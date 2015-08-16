@@ -13,9 +13,10 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
 
-  config.vm.box = "puppetlabs/centos-6.6-64-nocm"
+  config.vm.box = "puppetlabs/centos-6.6-32-nocm"
   config.vm.network "forwarded_port", host: 2443, guest: 443
   config.vm.network "private_network", ip: "192.168.56.10"
+  config.vm.boot_timeout = 600
   
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -46,13 +47,12 @@ Vagrant.configure(2) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
+ config.vm.provider "virtualbox" do |vb|
+   # Display the VirtualBox GUI when booting the machine
+   vb.gui = false
+   # Customize the amount of memory on the VM:
+   vb.memory = "1024"
+ end
   #
   # View the documentation for the provider you are using for more
   # information on available options.

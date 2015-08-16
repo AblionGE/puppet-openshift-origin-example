@@ -6,9 +6,12 @@ This repository is here to help people to set up an Openshift Origin with all Op
 
 To be able to play with Openshift, you need to have installed :
 
+* Virtualbox
 * Vagrant (https://www.vagrantup.com)
 * r10k (https://github.com/puppetlabs/r10k)
 * rake (https://github.com/ruby/rake)
+
+If you use Windows, the easiest solution is to install a Linux virtual machine. The installation will be slowed, but it will still work.
 
 # Installation
 
@@ -78,3 +81,9 @@ On your guest host, you can execute
     rake
     
 to see all commands available in the Rakefile
+
+# Troubles
+
+## Virtualbox
+- This installation works only on Linux, so I tried to install it on a Ubuntu virtual machine running on Windows, and I had some troubles with vagrant. Indeed, vagrant was unable to connect itself on the CentOS VM ('Warning: Connection timeout. Retrying...'). I found that the the source of this problem is the version of VirtualBox. I had some troubles with the latest version (5) and I simply came back to the version in the Ubuntu repo (4.3.10)
+- If you have troubles to access your applications, you probably need to configure the network of your VirtualBox installation. For that, on Virtualbox (not on a guest machine), you need to go on 'File -> Preferences -> Network' and add a NAT Network (if there is none) that supports DHCP and add a Host-only Network (if there is none).

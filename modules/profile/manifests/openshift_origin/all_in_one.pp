@@ -19,11 +19,11 @@ class profile::openshift_origin::all_in_one {
   require yum::repo::jenkins
   require yum::repo::openshift_server
   include profile::mount
-  Class['Yum::Repo::Jenkins'] -> Class['Openshift_origin::Cartridges::Jenkins']
-  Class['Yum::Repo::Epel'] -> Class['Openshift_origin::Client_tools']
-  Class['Yum::Repo::Openshift_server'] -> Class['Openshift_origin::Client_tools']
-  Class['Profile::Selinux'] -> Class['Openshift_origin']
+  Class['Yum::Repo::Jenkins'] -> Class['Profile::Selinux']
+  Class['Yum::Repo::Epel'] -> Class['Profile::Selinux']
+  Class['Yum::Repo::Openshift_server'] -> Class['Profile::Selinux']
   Class['Profile::Mount'] -> Class['Profile::Selinux']
+  Class['Profile::Selinux'] -> Class['Openshift_origin']
  
   $domain = "apps.myopenshift.com"
   $oo_hostname = "broker.openshift.local"

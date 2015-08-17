@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
 
-  config.vm.box = "puppetlabs/centos-6.6-32-nocm"
+  config.vm.box = "puppetlabs/centos-6.6-64-nocm"
   config.vm.network "forwarded_port", host: 2443, guest: 443
   config.vm.network "private_network", ip: "192.168.56.10"
   config.vm.boot_timeout = 1000

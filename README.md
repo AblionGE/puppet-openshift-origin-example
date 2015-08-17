@@ -87,3 +87,8 @@ to see all commands available in the Rakefile
 ## Virtualbox
 - This installation works only on Linux, so I tried to install it on a Ubuntu virtual machine running on Windows, and I had some troubles with vagrant. Indeed, vagrant was unable to connect itself on the CentOS VM ('Warning: Connection timeout. Retrying...'). I found that the the source of this problem is the version of VirtualBox. I had some troubles with the latest version (5) and I simply came back to the version in the Ubuntu repo (4.3.10)
 - If you have troubles to access your applications, you probably need to configure the network of your VirtualBox installation. For that, on Virtualbox (not on a guest machine), you need to go on 'File -> Preferences -> Network' and add a NAT Network (if there is none) that supports DHCP and add a Host-only Network (if there is none).
+- Running this installation from a VM into a VM could be really long. Just be patient. If you have some problems installing the CentOS VM, simply reload it with (it will restart the VM and try to provision it again)
+
+
+    rake dev:reload
+

@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "puppetlabs/centos-6.6-32-nocm"
   config.vm.network "forwarded_port", host: 2443, guest: 443
   config.vm.network "private_network", ip: "192.168.56.10"
-  config.vm.boot_timeout = 600
+  config.vm.boot_timeout = 1000
   
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -51,7 +51,7 @@ Vagrant.configure(2) do |config|
    # Display the VirtualBox GUI when booting the machine
    vb.gui = false
    # Customize the amount of memory on the VM:
-   vb.memory = "1024"
+   vb.memory = "2048"
  end
   #
   # View the documentation for the provider you are using for more

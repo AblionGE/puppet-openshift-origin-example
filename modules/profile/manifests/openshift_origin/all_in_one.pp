@@ -19,6 +19,7 @@ class profile::openshift_origin::all_in_one {
   require yum::repo::jenkins
   require yum::repo::openshift_server
   include profile::mount
+  include openshift_origin::client_tools
   Class['Yum::Repo::Jenkins'] -> Class['Openshift_origin::Cartridges::Jenkins']
   Class['Yum::Repo::Epel'] -> Class['Openshift_origin::Client_tools']
   Class['Yum::Repo::Openshift_server'] -> Class['Openshift_origin::Client_tools']
